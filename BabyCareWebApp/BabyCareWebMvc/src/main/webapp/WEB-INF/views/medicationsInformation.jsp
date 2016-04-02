@@ -50,7 +50,7 @@
 																<div class="form-group">
 																	<label>First Name<star>*</star></label> <input
 																		class="form-control" type="text" name="firstname"
-																		required="true" placeholder="ex: luis">
+																		required="true" placeholder=${parent.name} >
 																</div>
 															</div>
 															<div class="col-md-4">

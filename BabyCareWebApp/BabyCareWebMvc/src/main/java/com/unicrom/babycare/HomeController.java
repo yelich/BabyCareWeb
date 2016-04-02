@@ -1,10 +1,15 @@
 package com.unicrom.babycare;
 
+import java.util.ArrayList;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.unicrom.babycare.domain.business.Parent;
 
 
 /**
@@ -53,9 +58,14 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/medicationsInformation", method = RequestMethod.GET)
 	
-	public String medicationsInformation() {
+	public ModelAndView medicationsInformation() {
 		logger.info("Welcome home! The client locale is {}.");
-		return "medicationsInformation";
+		ModelAndView result=new ModelAndView();
+		result.setViewName("medicationsInformation");
+		result.addObject("parents", new ArrayList<Parent>());
+
+		//return "medicationsInformation";
+		return result;
 	}
 	
 	
